@@ -1,0 +1,63 @@
+<!--
+
+	In memory of all those who have passed away in these sufferings.
+
+	Code written by Ruoxin Mao.
+	Copyright Ruoxin Mao. All Rights Reserved.
+
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="我们不会忘记。" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>新冠肺炎逝者名录 - 我们不会忘记</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+		<link rel="canonical" href="https://ncov19.cn">
+	</head>
+
+	<body>
+		<div id="introContainer">
+			<div class="introTitleContainer song">
+				<div class="introTitleSub">截至 2022 年 12 月</div>
+				<div class="introTitleMain"><span id="txtTotalDeath">620位</span><span id="txtIntroTitleMain">中国大陆抗疫人员在 COVID-19 新冠肺炎疫情中殉职</span></div>
+			</div>
+			<div id="btnScrollDown"><i>&#xe627;</i>请向下</div>
+		</div>
+		<div id="mainContainer">
+			<div class="listTitle bold">抗疫殉职人员名录</div>
+			<div id="listContainer">
+				<div id="listSortContainer"><i>&#xe8b3;</i>
+					<select id="selectListSort" title="排序方式">
+						<option value="name">姓名</option>
+						<option value="gender">性别</option>
+						<option value="age">年龄</option>
+						<option value="occupation">职务</option>
+						<option value="political_identity">身份</option>
+						<option value="location">所在地</option>
+						<option value="cause_of_death">牺牲原因</option>
+						<option value="date">牺牲时间</option>
+					</select>
+				</div>
+				<div id="listItemsContainer"></div>
+			</div>
+			<div class="song" id="listEnd">人民英雄永垂不朽</div>
+			<div id="btnBacktoTop" title="返回顶部"><i>&#xe635;</i></div>
+			<footer>
+				数据来源：官方公告、政府表彰和主流媒体报道丨<a href="https://maorx.cn/" title="毛若昕丨静水流深" target="_blank">&copy; 2022 毛若昕</a>丨<a href="https://github.com/MobiusBeta/COVID-19-Victims-Memorial" target="_blank">Github 项目地址</a>
+			</footer>
+		</div>
+
+		<div id="splashScr">
+			<span class="song" id="splashText">请肃穆</span>
+		</div>
+		
+		<script src="scripts/main.js"></script>
+		<div style="display: none;">
+			<script type="text/javascript" src="https://s9.cnzz.com/z_stat.php?id=1278627857&web_id=1278627857"></script>
+		</div>
+	</body>
+</html>

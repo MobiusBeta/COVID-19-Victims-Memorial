@@ -1,0 +1,266 @@
+﻿/* Style written by Ruoxin Mao */
+* {
+	scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgba(255,255,255,.15);
+	border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(255,255,255,.3);
+}
+::-webkit-scrollbar-thumb:active {
+	background-color: rgba(255,255,255,.45);
+}
+html {
+	height: 100%;
+}
+body {
+	max-width: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	font-family: "PingFang SC", "Microsoft Yahei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	background-color: #25292B;
+	color: white;
+	cursor: default;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-user-select: none;
+	user-select: none;
+}
+@font-face {
+	font-family: 'iconfont';
+	/* Project id 1780603 */
+	src: url('https://at.alicdn.com/t/c/font_1780603_tt4b8zan2k.woff2?t=1671816393894') format('woff2'),
+		url('https://at.alicdn.com/t/c/font_1780603_tt4b8zan2k.woff?t=1671816393894') format('woff'),
+		url('https://at.alicdn.com/t/c/font_1780603_tt4b8zan2k.ttf?t=1671816393894') format('truetype');
+}
+i {
+	font-family: "iconfont" !important;
+	font-size: 20px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0;
+	-moz-osx-font-smoothing: grayscale;
+}
+.song {
+	font-family: "宋体", "SimSun", "STZhongsong", "Source Han Serif CN", serif !important;
+}
+.bold {
+	font-weight: bold;
+	font-family: "Microsoft Yahei";
+}
+#splashScr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #25292B;
+	transition: all .5s;
+}
+#splashText {
+	animation: fadeIn .5s;
+	font-size: 16px;
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+#introContainer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: rgba(255,255,255,.03);
+}
+.introTitleContainer {
+	text-align: left;
+	white-space: nowrap;
+}
+.introTitleSub {
+	color: rgba(255,255,255,.5);
+}
+.introTitleMain {
+	padding-bottom: 40px;
+	letter-spacing: 1px;
+}
+#txtTotalDeath {
+	font-size: 50px;
+}
+#btnScrollDown {
+	position: absolute;
+	bottom: 25px;
+	padding: 5px 10px;
+	color: rgba(255,255,255,.5);
+	font-size: small;
+	cursor: pointer;
+	transition: all .25s;
+}
+#btnScrollDown i {
+	font-size: small;
+	margin-right: 5px;
+}
+#btnScrollDown:hover {
+	color: white;
+}
+#btnScrollDown:active {
+	color: rgba(255,255,255,.3);
+}
+#mainContainer {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	background-color: #25292B;
+}
+.listTitle {
+	margin: 100px 0 70px;
+	text-align: center;
+	letter-spacing: 1px;
+	font-size: 18px;
+}
+#listContainer {
+	margin: 0 auto;
+	width: 1200px;
+	font-size: 0;
+}
+#listSortContainer {
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	margin: 0 5px 5px 0;
+}
+#listSortContainer i {
+	margin-right: 5px;
+	font-size: 16px;
+	color: rgba(255,255,255,.8);
+}
+select {
+	border: 1px solid transparent;
+	border-radius: 3px;
+	background-color: rgba(255,255,255,.05);
+	color: rgba(255,255,255,.8);
+	outline: none;
+	transition: .25s;
+}
+select:hover {
+	border-color: rgba(255,255,255,.05);
+}
+select:focus {
+	border-color: rgba(255,255,255,.1);
+	background-color: transparent;
+}
+.listItem {
+	display: inline-block;
+	width: 250px;
+	margin: 5px;
+	padding: 12px 20px;
+	background-color: rgba(255,255,255,.05);
+	border-radius: 5px;
+	white-space: nowrap;
+	overflow: hidden;
+	transition: all .25s;
+}
+.listItem:hover {
+	background-color: rgba(255,255,255,.1);
+}
+.listName {
+	font-size: 16px;
+}
+.listInnerItem {
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 15px;
+}
+.listInnerItemTitle {
+	color: rgba(255,255,255,.5);
+	font-size: 12px;
+}
+.listInnerItemContent {
+	font-size: small;
+}
+#listEnd {
+	margin-top: 50vh;
+	text-align: center;
+}
+#btnBacktoTop {
+	position: absolute;
+	bottom: 80px;
+	left: calc(50% - 15px);
+	color: rgba(255,255,255,.5);
+	cursor: pointer;
+	transition: all .25s;
+}
+#btnBacktoTop i {
+	font-size: 30px;
+}
+#btnBacktoTop:hover {
+	color: rgba(255,255,255,.8);
+}
+#btnBacktoTop:active {
+	color: rgba(255,255,255,.3);
+}
+
+footer {
+	margin-top: 50vh;
+	height: 50px;
+	color: rgba(255,255,255,.5);
+	text-align: center;
+	font-size: 12px;
+}
+a {
+	text-decoration: none;
+	color: rgba(255,255,255,.5);
+	transition: all .25s;
+}
+a:hover {color: white;}
+a:active {color: rgba(255,255,255,.5);}
+
+@media screen and (max-width: 1370px) {
+	#listContainer {
+		width: 900px;
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	#listContainer {
+		width: 600px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	#listContainer {
+		width: 300px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.introTitleContainer {
+		left: 10%;
+		width: 80%;
+		white-space: unset;
+	}
+	.introTitleSub, .introTitleMain {
+		font-size: small;
+	}
+	#txtIntroTitleMain {
+		display: block;
+		line-height: initial;
+		margin-top: -15px;
+	}
+	.listTitle {
+		margin: 80px 0 50px;
+	}
+	footer {
+		font-size: 12px;
+	}
+}
