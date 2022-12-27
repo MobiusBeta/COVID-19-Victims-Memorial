@@ -1,6 +1,7 @@
 /* JavaScript written by Ruoxin Mao */
 const version = "22w52a";
 const splashScreen = 1;
+let list = [];
 console.log("\n纪念所有在这些苦难中逝去的生命\n\n© 2022 毛若昕\nversion " + version + "\n\n");
 window.oncontextmenu = () => { return false; };
 window.onkeydown = e => { if ((e.ctrlKey || e.metaKey) && e.keyCode == 83) return false; };
@@ -11,7 +12,7 @@ if (splashScreen === 1) {
 		setTimeout(() => {
 			splashScr.remove();
 		}, 500);
-	}, 3500);
+	}, 3000);
 } else {
 	splashScr.remove();
 }
@@ -34,16 +35,23 @@ selectListSort.onchange = () => {
 	loadList(selectListSort.value);
 }
 function loadList(key) {
-	listItemsContainer.innerHTML = "";
-	const url = "https://ncov19.cn/lists/medical-death-list.json";
-	fetch(url).then(response => {
-		if (response.ok) {
-			return response.json();
-		}
-	}).then(data => {
-		txtTotalDeath.innerText = data.length + "位";
-		data.sort((a, b) => a[key].localeCompare(b[key]));
-		for (let i = 0; i < data.length; i++) {
+	if (list.length === 0) {
+		fetch("https://ncov19.cn/lists/medical-death-list.json").then(response => {
+			if (response.ok) {
+				return response.json();
+			}
+		}).then(data => {
+			list = data;
+			txtTotalDeath.innerText = list.length + "位";
+			loadListDOM();
+		});
+	} else {
+		loadListDOM();
+	}
+	function loadListDOM() {
+		listItemsContainer.innerHTML = "";
+		list.sort((a, b) => a[key].localeCompare(b[key]));
+		for (let i = 0; i < list.length; i++) {
 			const newListItem = document.createElement("div");
 			const newListName = document.createElement("div");
 			const newDiv = document.createElement("div");
@@ -92,7 +100,7 @@ function loadList(key) {
 			newListInnerItem7.classList.add("listInnerItem");
 			newListInnerItemTitle7.classList.add("listInnerItemTitle");
 			newListInnerItemContent7.classList.add("listInnerItemContent");
-			newListName.innerText = data[i].name;
+			newListName.innerText = list[i].name;
 			newListInnerItemTitle1.innerText = "性别";
 			newListInnerItemTitle2.innerText = "年龄";
 			newListInnerItemTitle3.innerText = "职务";
@@ -100,13 +108,13 @@ function loadList(key) {
 			newListInnerItemTitle5.innerText = "所在地";
 			newListInnerItemTitle6.innerText = "牺牲原因";
 			newListInnerItemTitle7.innerText = "牺牲时间";
-			newListInnerItemContent1.innerText = data[i].gender;
-			newListInnerItemContent2.innerText = data[i].age;
-			newListInnerItemContent3.innerText = data[i].occupation;
-			newListInnerItemContent4.innerText = data[i].political_identity;
-			newListInnerItemContent5.innerText = data[i].location;
-			newListInnerItemContent6.innerText = data[i].cause_of_death;
-			newListInnerItemContent7.innerText = data[i].date;
+			newListInnerItemContent1.innerText = list[i].gender;
+			newListInnerItemContent2.innerText = list[i].age;
+			newListInnerItemContent3.innerText = list[i].occupation;
+			newListInnerItemContent4.innerText = list[i].political_identity;
+			newListInnerItemContent5.innerText = list[i].location;
+			newListInnerItemContent6.innerText = list[i].cause_of_death;
+			newListInnerItemContent7.innerText = list[i].date;
 			newListInnerItem1.appendChild(newListInnerItemTitle1);
 			newListInnerItem1.appendChild(newListInnerItemContent1);
 			newListInnerItem2.appendChild(newListInnerItemTitle2);
@@ -132,5 +140,5 @@ function loadList(key) {
 			newListItem.appendChild(newListInnerItem7);
 			listItemsContainer.appendChild(newListItem);
 		}
-	});
+	}
 }
