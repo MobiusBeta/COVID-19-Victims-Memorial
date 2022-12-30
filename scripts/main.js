@@ -142,3 +142,10 @@ function loadList(key) {
 		}
 	}
 }
+var _hmt = _hmt || [];
+(function () {
+	var hm = document.createElement("script");
+	hm.src = "https://hm.baidu.com/hm.js?d39c4b4d8a2cf4a0d529e1730a40df42";
+	var s = document.getElementsByTagName("script")[0];
+	s.parentNode.insertBefore(hm, s);
+})();
