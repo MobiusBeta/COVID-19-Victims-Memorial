@@ -1,8 +1,8 @@
 /* JavaScript written by Ruoxin Mao */
-const version = "22w52a";
+const version = "23w01a";
 const splashScreen = 1;
 let list = [];
-console.log("\n纪念所有在这些苦难中逝去的生命\n\n© 2022 毛若昕\nversion " + version + "\n\n");
+console.log("\n纪念所有在这些苦难中逝去的生命\n\n© 2023 毛若昕\nversion " + version + "\n\n");
 window.oncontextmenu = () => { return false; };
 window.onkeydown = e => { if ((e.ctrlKey || e.metaKey) && e.keyCode == 83) return false; };
 loadList("name");
